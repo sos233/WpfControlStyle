@@ -424,4 +424,30 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border BorderBrush="#FFDFE9F3" Width="150" Height="40" BorderThickness="3" CornerRadius="3" >
+                        <Grid>
+                            <Border x:Name="border1" BorderBrush="#FF707070" Margin="-1" BorderThickness="2" CornerRadius="1" Background="#FFA6A5A5" Opacity="0.8"/>
+                            <Border x:Name="border" BorderBrush="#FFC3CCD5" Margin="-1.5" HorizontalAlignment="Left" Width="75" BorderThickness="1" Background="#FFF0F0F0" CornerRadius="1.5">
+                                <TextBlock x:Name="textBlock" FontSize="16" FontFamily="SimSun" TextAlignment="Center" VerticalAlignment="Center" Text="OFF"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="HorizontalAlignment" TargetName="border" Value="Right"/>
+                            <Setter Property="Text" TargetName="textBlock" Value="ON"/>
+                            <Setter Property="Foreground" TargetName="textBlock" Value="#FF1A8DB5"/>
+                            <Setter Property="Background" TargetName="border1" Value="#FF4CC893"/>
+                            <Setter Property="BorderBrush" TargetName="border1" Value="#FF41AC7E"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
